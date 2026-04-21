@@ -2,6 +2,6 @@
     session_start();
     session_unset(); // Menghapus semua variabel session
     session_destroy(); // Menghancurkan session
-    header("Location: index.php"); // Kembali ke landing page
+    header("Location: ././index.php"); // Kembali ke landing page
     exit();
 ?>

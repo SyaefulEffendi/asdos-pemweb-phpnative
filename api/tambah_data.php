@@ -100,7 +100,7 @@
 <body>
     <div class="card">
         <h2>Tambah Mahasiswa</h2>
-        <form action="proses/prosesTambah.php" method="POST">
+        <form action="./prosesTambah.php" method="POST">
             
             <div class="form-group">
                 <label for="nim">Nomor Induk Mahasiswa (NIM)</label>
@@ -143,7 +143,7 @@
         const inputNamaProvinsi = document.getElementById('nama_provinsi');
 
         // 1. Ambil data Provinsi (Panggil get_alamat.php dengan type=provinsi)
-        fetch('API/get_alamat.php?type=provinsi')
+        fetch('get_alamat.php?type=provinsi')
             .then(response => response.json())
             .then(data => {
                 selectProvinsi.innerHTML = '<option value="">-- Pilih Provinsi --</option>';

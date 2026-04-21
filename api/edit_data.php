@@ -1,6 +1,6 @@
 <?php
 session_start();
-require './service/koneksi.php';
+require './koneksi.php';
 
 // Validasi: Pastikan hanya admin yang bisa mengakses halaman ini
 if (!isset($_SESSION['id']) || $_SESSION['role'] != 'admin') {
@@ -25,13 +25,13 @@ if (!$data) {
 <head>
     <meta charset="UTF-8">
     <title>Edit Data Mahasiswa</title>
-    <link rel="stylesheet" href="assets/css/auth.css"> 
+    <link rel="stylesheet" href="/assets/css/auth.css"> 
 </head>
 <body>
     <div class="auth-card">
         <h2>Edit Data Mahasiswa</h2>
         
-        <form action="proses/prosesEdit.php" method="POST">
+        <form action="./prosesEdit.php" method="POST">
             
             <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
             

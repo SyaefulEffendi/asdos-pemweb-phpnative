@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login Aplikasi</title>
-    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="/assets/css/auth.css">
 </head>
 <body>
     <div class="auth-card">

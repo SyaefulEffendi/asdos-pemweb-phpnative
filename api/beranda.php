@@ -1,6 +1,6 @@
 <?php
 session_start();
-require './service/koneksi.php';
+require './koneksi.php';
 if (!isset($_SESSION['id']) || $_SESSION['role'] != 'user') {
     header("Location: login.php"); exit();
 }
@@ -12,7 +12,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM mahasiswa");
 <head>
     <meta charset="UTF-8">
     <title>Beranda User</title>
-    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
     <style>
         table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
         table, th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }

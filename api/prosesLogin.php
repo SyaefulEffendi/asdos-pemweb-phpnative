@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../service/koneksi.php';
+require './koneksi.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telp = htmlspecialchars($_POST['telp']);
@@ -22,19 +22,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Logika Redirect berdasarkan Role
             if ($row['role'] == 'admin') {
-                header("Location: ../dashboardAdmin.php");
+                header("Location: dashboardAdmin.php");
             } else {
-                header("Location: ../beranda.php");
+                header("Location: beranda.php");
             }
             exit();
         } else {
             $_SESSION['error'] = "Password salah!";
-            header("Location: ../login.php");
+            header("Location: login.php");
             exit();
         }
     } else {
         $_SESSION['error'] = "User tidak ditemukan!";
-        header("Location: ../login.php");
+        header("Location: login.php");
         exit();
     }
 }

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require '../service/koneksi.php';
+    require './koneksi.php';
     
     $nim = $_POST['nim'];
     $nama = $_POST['nama'];
@@ -16,6 +16,6 @@
     $query = "INSERT INTO mahasiswa (nim, nama, jurusan, alamat) VALUES ('$nim', '$nama', '$jurusan', '$alamat_lengkap')";
     
     if(mysqli_query($koneksi, $query)) {
-        header("Location: ../dashboardAdmin.php");
+        header("Location: dashboardAdmin.php");
     }
 ?>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require './service/koneksi.php';
+require './koneksi.php';
 if (!isset($_SESSION['id']) || $_SESSION['role'] != 'admin') {
     header("Location: login.php"); exit();
 }
@@ -11,7 +11,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM mahasiswa");
 <head>
     <meta charset="UTF-8">
     <title>Dashboard Admin</title>
-    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
     <style>
         table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
         table, th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
@@ -41,7 +41,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM mahasiswa");
                         <td><?= $row['jurusan']; ?></td>
                         <td>
                             <a href="edit_data.php?id=<?= $row['id']; ?>" class="btn-edit">Edit</a>
-                            <a href="proses/prosesHapus.php?id=<?= $row['id']; ?>" class="btn-delete" onclick="return confirm('Yakin hapus?')">Hapus</a>
+                            <a href="./prosesHapus.php?id=<?= $row['id']; ?>" class="btn-delete" onclick="return confirm('Yakin hapus?')">Hapus</a>
                         </td>
                     </tr>
                     <?php endwhile; ?>

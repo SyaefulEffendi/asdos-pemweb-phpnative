@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Register Aplikasi</title>
-    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="/assets/css/auth.css">
 </head>
 <body>
     <div class="auth-card">
@@ -14,7 +14,7 @@
         
         <?php if(isset($_SESSION['error'])) { echo "<div class='alert alert-error'>".$_SESSION['error']."</div>"; unset($_SESSION['error']); } ?>
 
-        <form action="proses/prosesRegister.php" method="POST" onsubmit="return validateForm()">
+        <form action="./prosesRegister.php" method="POST" onsubmit="return validateForm()">
             <div class="form-group">
                 <label for="nama">Nama Lengkap</label>
                 <input type="text" name="nama" placeholder="Masukkan nama lengkap" required>
@@ -38,6 +38,6 @@
             Sudah punya akun? <a href="login.php">Login di sini</a>
         </div>
     </div>
-    <script src="assets/js/script.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>

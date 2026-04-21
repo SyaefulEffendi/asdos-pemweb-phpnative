@@ -1,6 +1,16 @@
 {
+    "version": 2,
     "functions": {
         "api/*.php": {
+            "runtime": "vercel-php@0.7.1"
+        },
+        "proses/*.php": {
+            "runtime": "vercel-php@0.7.1"
+        },
+        "service/*.php": {
+            "runtime": "vercel-php@0.7.1"
+        },
+        "*.php": {
             "runtime": "vercel-php@0.7.1"
         }
     },
@@ -8,6 +18,18 @@
         {
             "src": "/api/(.*).php",
             "dest": "/api/$1.php"
+        },
+        {
+            "src": "/proses/(.*).php",
+            "dest": "/proses/$1.php"
+        },
+        {
+            "src": "/service/(.*).php",
+            "dest": "/service/$1.php"
+        },
+        {
+            "src": "/(.*).php",
+            "dest": "/$1.php"
         },
         {
             "src": "/(.*)",

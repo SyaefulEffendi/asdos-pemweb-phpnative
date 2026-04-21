@@ -2,26 +2,10 @@
     "version": 2,
     "functions": {
         "**/*.php": {
-            "runtime": "vercel-php@0.7.1"
+            "runtime": "vercel-php@0.6.0"
         }
     },
     "routes": [
-        {
-            "src": "/api/(.*).php",
-            "dest": "/api/$1.php"
-        },
-        {
-            "src": "/proses/(.*).php",
-            "dest": "/proses/$1.php"
-        },
-        {
-            "src": "/service/(.*).php",
-            "dest": "/service/$1.php"
-        },
-        {
-            "src": "/(.*).php",
-            "dest": "/$1.php"
-        },
         {
             "src": "/(.*)",
             "dest": "/$1"

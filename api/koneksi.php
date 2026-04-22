@@ -4,7 +4,7 @@ $host = 'gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com';
 $port = 4000;
 $user = '4SQbytd1sXK9Aa4.root';
 $pass = 'GSNjampt0pgM6oWJ';
-$db   = 'test';
+$db   = 'pemweb-db';
 
 // Inisialisasi mysqli
 $koneksi = mysqli_init();

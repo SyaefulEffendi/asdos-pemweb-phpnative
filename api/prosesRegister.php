@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cek_email = mysqli_query($koneksi, "SELECT * FROM users WHERE email = '$email'");
     if (mysqli_num_rows($cek_email) > 0) {
         $_SESSION['error'] = "Email sudah digunakan!";
-        header("Location: register.php");
+        header("Location: /api/register.php");
         exit();
     }
 

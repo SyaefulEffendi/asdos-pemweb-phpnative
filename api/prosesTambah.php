@@ -16,6 +16,6 @@
     $query = "INSERT INTO mahasiswa (nim, nama, jurusan, alamat) VALUES ('$nim', '$nama', '$jurusan', '$alamat_lengkap')";
     
     if(mysqli_query($koneksi, $query)) {
-        header("Location: dashboardAdmin.php");
+        header("Location: /api/dashboardAdmin.php");
     }
 ?>

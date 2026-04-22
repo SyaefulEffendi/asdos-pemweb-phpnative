@@ -5,6 +5,6 @@
 
     $query = "DELETE FROM mahasiswa WHERE id = '$id'";
     if (mysqli_query($koneksi, $query)) {
-        header("Location: dashboardAdmin.php");
+        header("Location: /api/dashboardAdmin.php");
     }
 ?>

@@ -22,19 +22,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Logika Redirect berdasarkan Role
             if ($row['role'] == 'admin') {
-                header("Location: dashboardAdmin.php");
+                header("Location: /api/dashboardAdmin.php");
             } else {
-                header("Location: beranda.php");
+                header("Location: /api/beranda.php");
             }
             exit();
         } else {
             $_SESSION['error'] = "Password salah!";
-            header("Location: login.php");
+            header("Location: /api/login.php");
             exit();
         }
     } else {
         $_SESSION['error'] = "User tidak ditemukan!";
-        header("Location: login.php");
+        header("Location: /api/login.php");
         exit();
     }
 }

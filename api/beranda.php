@@ -2,7 +2,7 @@
 session_start();
 require __DIR__ . '/koneksi.php';
 if (!isset($_SESSION['id']) || $_SESSION['role'] != 'user') {
-    header("Location: login.php"); exit();
+    header("Location: /api/login.php"); exit();
 }
 
 $query = mysqli_query($koneksi, "SELECT * FROM mahasiswa");

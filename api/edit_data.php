@@ -4,7 +4,7 @@ require __DIR__ . '/koneksi.php';
 
 // Validasi: Pastikan hanya admin yang bisa mengakses halaman ini
 if (!isset($_SESSION['id']) || $_SESSION['role'] != 'admin') {
-    header("Location: login.php");
+    header("Location: /api/login.php");
     exit();
 }
 

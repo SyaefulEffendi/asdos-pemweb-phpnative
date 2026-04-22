@@ -13,7 +13,7 @@
         <?php if(isset($_SESSION['success'])) { echo "<div class='alert alert-success'>".$_SESSION['success']."</div>"; unset($_SESSION['success']); } ?>
         <?php if(isset($_SESSION['error'])) { echo "<div class='alert alert-error'>".$_SESSION['error']."</div>"; unset($_SESSION['error']); } ?>
 
-        <form action="proses/prosesLogin.php" method="POST" onsubmit="return validateForm()">
+        <form action="./prosesLogin.php" method="POST" onsubmit="return validateForm()">
             <div class="form-group">
                 <label for="telp">Nomor Telpon</label>
                 <input type="text" id="telp" name="telp" placeholder="Masukkan Nomor Telpon Anda" required>

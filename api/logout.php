@@ -1,8 +1,13 @@
 <?php
 ini_set('session.save_path', '/tmp');
-    session_start();
-    session_unset(); // Menghapus semua variabel session
-    session_destroy(); // Menghancurkan session
-    header("Location: /api/index.php"); // Kembali ke landing page
-    exit();
+session_start();
+session_destroy();
+
+// Hapus semua cookie
+setcookie('user_id',   '', time() - 3600, '/');
+setcookie('user_nama', '', time() - 3600, '/');
+setcookie('user_role', '', time() - 3600, '/');
+
+header("Location: /api/login.php");
+exit();
 ?>

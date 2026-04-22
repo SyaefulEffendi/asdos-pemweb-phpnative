@@ -1,6 +1,7 @@
 <?php
 ini_set('session.save_path', '/tmp');
     session_start();
+    require __DIR__ . '/auth_check.php';
     require __DIR__ . '/koneksi.php';
     
     $nim = $_POST['nim'];

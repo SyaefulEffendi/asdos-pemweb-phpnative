@@ -18,21 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['nama'] = $row['nama'];
             $_SESSION['role'] = $row['role'];
 
-            if ($row['role'] == 'admin') {
-                header("Location: /api/dashboardAdmin.php");
-            } else {
-                header("Location: /api/beranda.php");
-            }
-            exit();
-        } else {
-            $_SESSION['error'] = "Password salah!";
-            header("Location: /api/login.php");
-            exit();
+            // DEBUG - lihat role dan session
+            echo "Role: " . $row['role'] . "<br>";
+            echo "Session ID: " . session_id() . "<br>";
+            echo "Session data: <pre>" . print_r($_SESSION, true) . "</pre>";
+            echo "<a href='/api/beranda.php'>Klik ke Beranda</a> | ";
+            echo "<a href='/api/dashboardAdmin.php'>Klik ke Dashboard Admin</a>";
+            die();
         }
-    } else {
-        $_SESSION['error'] = "User tidak ditemukan!";
-        header("Location: /api/login.php");
-        exit();
     }
 }
 ?>

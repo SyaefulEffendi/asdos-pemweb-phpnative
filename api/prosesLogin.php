@@ -13,18 +13,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
         
-        if (password_verify($password, $row['password'])) {
+if (password_verify($password, $row['password'])) {
             $_SESSION['id'] = $row['id'];
             $_SESSION['nama'] = $row['nama'];
             $_SESSION['role'] = $row['role'];
 
-            // DEBUG - lihat role dan session
-            echo "Role: " . $row['role'] . "<br>";
-            echo "Session ID: " . session_id() . "<br>";
-            echo "Session data: <pre>" . print_r($_SESSION, true) . "</pre>";
-            echo "<a href='/api/beranda.php'>Klik ke Beranda</a> | ";
-            echo "<a href='/api/dashboardAdmin.php'>Klik ke Dashboard Admin</a>";
-            die();
+            setcookie('user_id', $row['id'], time() + (86400 * 30), "/");
+            setcookie('user_nama', $row['nama'], time() + (86400 * 30), "/");
+            setcookie('user_role', $row['role'], time() + (86400 * 30), "/");
+
+            // Redirect berdasarkan role
+            if ($row['role'] == 'admin') {
+                header("Location: /api/dashboardAdmin.php");
+            } else {
+                header("Location: /api/beranda.php");
+            }
+            exit(); // Selalu gunakan exit() setelah header redirect
+        } else {
+            $_SESSION['error'] = "Password salah!";
+            header("Location: /api/login.php");
+            exit();
         }
     }
 }

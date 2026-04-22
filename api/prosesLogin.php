@@ -9,33 +9,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "SELECT * FROM users WHERE telp = '$telp'";
     $result = mysqli_query($koneksi, $query);
 
-    // Cek apakah user ada
+    // DEBUG SEMENTARA - hapus setelah selesai
+    echo "Telp input: " . $telp . "<br>";
+    echo "Jumlah user ditemukan: " . mysqli_num_rows($result) . "<br>";
+    
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
-        
-        // Verifikasi kecocokan password dengan hash di database
-        if (password_verify($password, $row['password'])) {
-            // Set Session
-            $_SESSION['id'] = $row['id'];
-            $_SESSION['nama'] = $row['nama'];
-            $_SESSION['role'] = $row['role'];
-
-            // Logika Redirect berdasarkan Role
-            if ($row['role'] == 'admin') {
-                header("Location: /api/dashboardAdmin.php");
-            } else {
-                header("Location: /api/beranda.php");
-            }
-            exit();
-        } else {
-            $_SESSION['error'] = "Password salah!";
-            header("Location: /api/login.php");
-            exit();
-        }
+        echo "Password di DB: " . $row['password'] . "<br>";
+        echo "Verify result: " . (password_verify($password, $row['password']) ? 'TRUE' : 'FALSE') . "<br>";
+        die(); // stop dulu
     } else {
-        $_SESSION['error'] = "User tidak ditemukan!";
-        header("Location: /api/login.php");
-        exit();
+        echo "User tidak ditemukan!";
+        die();
     }
 }
 ?>

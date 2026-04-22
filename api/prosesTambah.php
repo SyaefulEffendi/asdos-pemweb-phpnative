@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require './koneksi.php';
+    require __DIR__ . '/koneksi.php';
     
     $nim = $_POST['nim'];
     $nama = $_POST['nama'];

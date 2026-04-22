@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require './koneksi.php';
+    require __DIR__ . '/koneksi.php';
     $id = $_GET['id'];
 
     $query = "DELETE FROM mahasiswa WHERE id = '$id'";

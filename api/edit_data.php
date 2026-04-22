@@ -1,6 +1,6 @@
 <?php
 session_start();
-require './koneksi.php';
+require __DIR__ . '/koneksi.php';
 
 // Validasi: Pastikan hanya admin yang bisa mengakses halaman ini
 if (!isset($_SESSION['id']) || $_SESSION['role'] != 'admin') {

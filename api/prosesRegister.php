@@ -1,6 +1,6 @@
 <?php
 session_start();
-require './koneksi.php'; // Naik satu folder ke file koneksi
+require __DIR__ . '/koneksi.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validasi Server-Side: Anti SQL Injection & XSS
